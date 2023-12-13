@@ -5,6 +5,10 @@ function pigLatinSyllable(syllable) {
     let pig_latin = "";
     let end_pig_latin = "";
     let vowel_cluster = true;
+    if(syllable.length == 1) {
+        if(VOWELS.includes(syllable.toUpperCase())) return syllable + "yay";
+        return syllable + "ay";
+    }
     for(let i = 0; i < syllable.length; i++) {
         let letter = syllable[i].toUpperCase();
         if(VOWELS.includes(letter) || (!vowel_cluster && letter == "Y")) {
